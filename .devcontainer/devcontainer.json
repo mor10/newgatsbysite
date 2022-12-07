@@ -7,13 +7,36 @@
 		"cpus": 4
 	},
 
-	"updateContentCommand": "npm install -g gatsby-cli"
+	"waitFor": "onCreateCommand",
+	"updateContentCommand": "npm install -g gatsby-cli",
+	"postCreateCommand": "npm install",
+	"postAttachCommand": {
+		"server": "gatsby develop -H 0.0.0.0"
+	},
+
+
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [
+		8000
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"stylelint.vscode-stylelint",
+				"esbenp.prettier-vscode"
+			]
+		},
+		"codespaces": {
+			"openFiles": [
+				"scr/pages/index.js"
+			]
+		}
+	}
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
