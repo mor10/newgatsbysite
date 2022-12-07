@@ -18,7 +18,12 @@
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
-
+	"portsAttributes": {
+		"8000": {
+			"label": "Application",
+			"onAutoForward": "openPreview"
+		}
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		8000
